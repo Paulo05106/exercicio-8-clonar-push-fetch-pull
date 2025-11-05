@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Minha Página Inicial</title>
+      <script src="script.js"></script>
+      <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+      <header>
+          <h1>Minha Página Inicial</h1>
+      </header>
+      <div class="container">
+          <h2>Bem-vindo à minha página inicial</h2>
+          <p>Esta é minha home page.</p>
+          <p>Exercícios de Git.</p>
+          <button onclick="atualizarHora()">Mostrar Hora Atual</button>
+          <p id="horaAtual"></p>
+      </div>
+  </body>
+</html>
+
+No arquivo script.js, adicione o seguinte:
+function atualizarHora() {
+    var data = new Date();
+    var hora = data.getHours();
+    var minutos = data.getMinutes();
+    var segundos = data.getSeconds();
+
+    hora = hora < 10 ? '0' + hora : hora;
+    minutos = minutos < 10 ? '0' + minutos : minutos;
+    segundos = segundos < 10 ? '0' + segundos : segundos;
+
+    document.getElementById('horaAtual').innerText = hora + ':' + minutos + ':' + segundos;
+}
